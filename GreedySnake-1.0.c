@@ -1,6 +1,7 @@
 #include <LedControl.h>
 const int sSize=400;
 int speedSnake=333;
+int biteItselfTime=0;
 const bool debugMode=false;
 bool dieAtBegin=false;
 LedControl lc=LedControl(12,11,10,5);
@@ -153,10 +154,12 @@ void loop() {
       if(s[i].x>=8 || s[i].y>=8 || s[i].x<=-1 || s[i].y<=-1)gameStatement=2;
      lc.setLed(0,s[i].x,s[i].y,true);
     }
+    biteItselfTime=0;
     if(debugMode==false)
       for(i=tail;i<=head-1;i++){
         for(j=i+1;j<=head-1;j++){
-          if(s[i].x==s[j].x && s[i].y==s[j].y)gameStatement=2;
+          if(s[i].x==s[j].x && s[i].y==s[j].y) biteItselfTime++;
+          if(biteItselftime>1)gameStatement=2;
         }
      }
     lc.setLed(0,foodx,foody,true);
