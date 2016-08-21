@@ -1,5 +1,7 @@
 # Arduino-C-GreedySnake
 -----------------------------
+Maybe it will no longer being updating
+-----------------------------
 UPDATE-5.26 VERSION 1.1 Rolled out!
 Solved the problems caused by the limited queue on Arduino Uno(and other device with little memory)!
 -----------------------------
